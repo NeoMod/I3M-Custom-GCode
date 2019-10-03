@@ -20,3 +20,13 @@ I have done so in order to use the same "wipe" function for each of my prints, l
 This part is mostly for fun, altough having a *"custom tune"* to play when the print is finished really helps if you have your printer in another room and/or if you are doing some test prints without remote control (ie. Octoprint).
 
 ***I don't reccomend using full-version theme tunes because they take too lonk to play and put some stress on the beeper***
+
+### Tools & Credits
+
+- http://ddrboxman.github.io/RepRapRingtone/
+
+This is a wonderful tool both to *preview* your tune code and to *convert rtttl notation* into GCode M300 notation.
+
+- http://arcadetones.emuunlim.com/ringtones_r/
+
+Some RTTL files of well-know theme songs / intro / credit music.
