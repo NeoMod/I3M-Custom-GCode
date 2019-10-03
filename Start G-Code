@@ -1,0 +1,39 @@
+;wipe nozzle function is included
+;please check line 11 for buildplate clearance if you customized yoour printer
+
+G21 ;metric values
+G90 ;absolute positioning
+M82 ;set extruder to absolute mode
+M107 ;start with the fan off
+G28 X0 Y0 ;move X/Y to min endstops
+G28 Z0 ;move Z to min endstops
+
+;this part should take care of any mini-blob created during heating up of the nozzle
+G1 Z7 F600 ;move Z to 7mm
+G1 X5 Y5 F600 ;move to x5mm y5mm
+
+;now move to a proper height. customize this based on your carriage/build plate setup.
+G1 Z0.8 ;move z to 0.7mm
+G92 E0 ;zero the extruded length
+G1 F200 E15 ;extrude 15mm of filament in place. customize according to end-script retraction
+G1 Z10 F200; move the extruder up by 10mm
+G1 F200 E30 X40; extrude 30mm in a 4cm line
+G1 Z18.00 F500 ; move up quickly the extruder to 18mm to break any strings from the blob
+G1 X80 Y5 F4000; move away a bit to drag any remaining string of filament, useful for PETG
+G1 E-2 F600; retract a bit to stop oozing
+
+;indiana jhones theme - curtesy of @saschaludwig
+M300 S1318 P240
+M300 S0 P120
+M300 S1396 P120
+M300 S1567 P120
+M300 S0 P120
+M300 S2093 P720
+M300 S0 P180
+;end theme
+
+;prepare for actual printing 
+G92 E0 ;zero the extruded length again
+G1 F{speed_travel}
+M117 Printing...
+G5
