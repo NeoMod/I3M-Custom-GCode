@@ -20,7 +20,7 @@ G1 Z10 F200; move the extruder up by 10mm
 G1 F200 E30 X40; extrude 30mm in a 4cm line
 G1 Z18.00 F500 ; move up quickly the extruder to 18mm to break any strings from the blob
 G1 X80 Y5 F4000; move away a bit to drag any remaining string of filament, useful for PETG
-G1 E-2 F600; retract a bit to stop oozing
+G1 -2 F600; retract a bit to stop oozing
 
 ;indiana jhones theme - curtesy of @saschaludwig
 M300 S1318 P240
